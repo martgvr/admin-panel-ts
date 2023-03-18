@@ -1,56 +1,220 @@
-/* IMPORTS */
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+.adminpanel {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240, 247, 255);
 
-/* RESET */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 70px 1fr;
+    grid-template-areas:    "sidebar content"
+                            "sidebar content";
 }
 
-ul {
-  list-style-type: none;
+.adminpanel > article {
+    padding: 30px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
+.adminpanel__sidebar {
+    grid-area: sidebar;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(220, 220, 220);
+
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
 }
 
-/* HELPERS */
-.flex-row {
-  display: flex;
-  flex-direction: row;
+.adminpanel__sidebar > div:first-of-type {
+    gap: 50px;
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
+.adminpanel__sidebar--bottom {
+    padding: 14px;
+    gap: 10px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+
+    font-size: 1.1em;
+    font-family: 'Signika Negative', sans-serif;
 }
 
-/* GLOBALS */
-html {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  scrollbar-gutter: stable;
+.adminpanel__sidebar--bottom:hover {
+    background-color: rgb(124, 122, 106);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
 }
 
-body {
-  font-family: 'Poppins';
-  max-width: 1920px;
-  min-height: 100vh;
-  width: 100%;
-  margin: 0;
+.adminpanel__sidebar--bottom:hover > img {
+    filter: invert(1);
 }
 
-#root {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.adminpanel__sidebar--bottom img {
+    width: 20px;
+    height: 20px;
+}
+
+.adminpanel__content {
+    grid-area: content;
+}
+
+.adminpanel__sidebar--top {
+    width: 100%;
+    align-items: center;
+}
+
+.sidebar__menu {
+    width: 100%;
+    gap: 16px;
+    font-size: 1.1em;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.sidebar__menu--item {
+    padding: 16px;
+    gap: 16px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.sidebar__menu--item:not(.active) {
+    filter: contrast(0.1);
+}
+
+.sidebar__menu--item:hover {
+    cursor: pointer;
+    background-color: rgb(124, 122, 106);
+    color: rgb(255, 255, 255);
+    filter: contrast(1);
+}
+
+.sidebar__menu--item:hover > img {
+    filter: invert(1);
+}
+
+.sidebar__menu--item.active {
+    background-color: rgb(88, 107, 122);
+    color: rgb(255, 255, 255);
+}
+
+.sidebar__menu--item.active > img {
+    filter: invert(1);
+}
+
+.sidebar__menu--item img {
+    width: 25px;
+    height: 25px;
+}
+
+/* TOPBAR */
+
+.adminpanel__topbar {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adminpanel__topbar--left {
+    align-items: center;
+    gap: 14px;
+}
+
+.adminpanel__topbar--left h1 {
+    font-size: 2em;
+}
+
+.adminpanel__topbar--left p {
+    color: rgb(120, 120, 120);
+    font-size: 1.6em;
+    font-family: 'Dosis', sans-serif;
+}
+
+.adminpanel__topbar--right {
+    gap: 20px;
+}
+
+.adminpanel__topbar--right button {
+    background-color: rgb(65, 100, 136);
+    color: white;
+    border-radius: 6px;
+    padding: 10px;
+    border: 0;
+    
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 1em;
+}
+
+.adminpanel__topbar--right button:hover {
+    cursor: pointer;
+    background-color: rgb(124, 122, 106);
+}
+
+.adminpanel__topbar--right button:active {
+    background-color: rgb(85, 83, 62);
+}
+
+.adminpanel__topbar--right input {
+    outline: 0;
+    width: 350px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 4px;
+
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 1em;
+}
+
+.adminpanel__topbar--right input::placeholder {
+    color: rgb(151, 151, 151);
+}
+
+.adminpanel__topbar--right input:focus::placeholder {
+    color: transparent;
+}
+
+.adminpanel__topbar--right input:focus {
+    border: 1px solid rgb(206, 198, 154);
+}
+
+/* FILTROS */
+
+.adminpanel__filterbar {
+    gap: 12px;
+    align-items: center;
+    width: 468px;
+}
+
+.adminpanel__filterbar select {
+    outline: 0;
+    width: 50%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 4px;
+
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 1em;
+}
+
+.adminpanel__filterbar button {
+    background-color: rgb(65, 100, 136);
+    color: white;
+    border-radius: 6px;
+    border: 0;
+
+    height: 30px;
+    width: 36px;
+
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 1em;
+}
+
+.adminpanel__filterbar button:hover {
+    cursor: pointer;
+    background-color: rgb(124, 122, 106);
+}
+
+.adminpanel__filterbar button:active {
+    background-color: rgb(85, 83, 62);
 }
