@@ -17,11 +17,8 @@ function App() {
 
   return (
     <section className='adminpanel'>
-
       <article className='adminpanel__sidebar flex-column'>
-
-      <div className='adminpanel__sidebar--top flex-column'>
-
+        <div className='adminpanel__sidebar--top flex-column'>
           <p>logo</p>
 
           <div className='sidebar__menu flex-column'>
@@ -46,14 +43,12 @@ function App() {
               </div>
             </Link>
           </div>
-
         </div>
 
         <div className='adminpanel__sidebar--bottom flex-row'>
           <img src="https://cdn-icons-png.flaticon.com/512/2767/2767155.png" alt="" />
           <p>Cerrar sesión</p>   
         </div>
-
       </article>
       
       <article className='adminpanel__content'>

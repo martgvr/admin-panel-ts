@@ -1,0 +1,40 @@
+/* CONTENEDOR */
+
+.panelorders {
+    height: 100%;
+    gap: 20px;
+}
+
+/* CONTENT */
+
+.panelorders__content {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+}
+
+.panelorders__content > div {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 4px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.panelorders__content--list {
+    flex-grow: 1;
+    background-color: rgb(255, 255, 255);
+}
+
+.panelorders__content--details {
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+}
+
+.panelorders__content--details h4 {
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+
+    font-size: 1.0em;
+    font-weight: 300;
+    color: rgb(40, 40, 40);
+}
