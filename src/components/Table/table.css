@@ -1,0 +1,88 @@
+/* CONTAINER */
+
+.admintable {
+    border: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admintable tr {
+    text-align: center;
+}
+
+.admintable__selected {
+    background-color: rgb(220, 236, 241)!important;
+}
+
+/* HEAD */
+
+.admintable thead {
+    background-color: rgb(240, 248, 250);
+    color: rgb(100, 100, 100);
+    font-size: 0.8em;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.admintable thead tr th {
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: 300;
+    padding: 6px;
+}
+
+.admintable thead tr th:first-of-type {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.admintable thead tr th:last-of-type {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+/* ROW */
+
+.admintable tbody {
+    padding: 10px;
+    gap: 10px;
+}
+
+.admintable tbody tr {
+    padding: 20px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.admintable tbody tr:nth-child(even) {
+    background-color: rgb(250, 250, 250);
+}
+
+.admintable tbody tr:hover {
+    cursor: pointer;
+    background-color: rgb(221, 238, 241);
+}
+
+.admintable tbody tr td {
+    padding: 16px 0px;
+}
+
+.admintable tbody tr td:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+}
+
+.admintable tbody tr td:first-of-type {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.admintable tbody tr td:last-of-type {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.admintable tbody img {
+    border-radius: 100%;
+    width: 50px;
+}

@@ -1,0 +1,39 @@
+.textinput__container  {
+    width: 100%;
+}
+
+.textinput__container label {
+    position: relative;
+    top: 12px;
+
+    margin-left: 12px;
+    padding: 4px;
+
+    font-size: 0.8em;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: 'Dosis', sans-serif;
+    background-color: rgb(255, 255, 255);
+    z-index: 0;
+}
+
+.textinput {
+    border: 1px solid rgb(182, 182, 182);
+    background-color: transparent;
+    outline: 0;
+    padding: 14px;
+    width: 100%;
+    font-size: 1em;
+}
+
+.textinput:focus {
+    border: 1px solid rgb(173, 127, 40);
+}
+
+.textinput::placeholder {
+    color: rgb(192, 192, 192);
+}
+
+.textinput:focus::placeholder {
+    color: transparent;
+}

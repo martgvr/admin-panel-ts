@@ -1,3 +1,4 @@
+import { auth, app } from "../services/firebase.config.js"
 import { getFirestore, collection, query, where, getDocs, addDoc } from 'firebase/firestore'
 
 // FIRESTORE DATABASE

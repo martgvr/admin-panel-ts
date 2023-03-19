@@ -1,0 +1,361 @@
+/* CONTENEDOR */
+
+.adminpanelproducts {
+    height: 100%;
+    gap: 20px;
+}
+
+/* CONTENT */
+
+.adminpanelproducts__content { 
+    height: 100%;
+    display: grid;
+    gap: 20px;
+
+    grid-template-rows: 1fr 0.8fr;
+    grid-template-columns: 1fr 400px;
+    grid-template-areas:    "content__list content__details"
+                            "content__list content__price";
+}
+
+.adminpanelproducts__content > div {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 10px;
+
+    border: 1px solid rgb(216, 216, 216);
+    box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+}
+
+.adminpanelproducts__content h4 {
+    font-size: 1.0em;
+    font-weight: 300;
+    color: rgb(40, 40, 40);
+}
+
+.content__list {
+    grid-area: content__list;
+}
+
+
+.content__price {
+    grid-area: content__price;
+}
+
+/* DETAILS */
+
+.content__stock {
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content__stock > div {
+    width: 100%;
+}
+
+.content__stock h4 {
+    height: 35px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.content__stock--row {
+    padding: 6px 20px;
+    gap: 6px;
+}
+
+.content__stock--row p {
+    font-size: 0.8em;
+    font-weight: 100;
+    color: rgb(120, 120, 120);
+}
+
+.content__stock--row img {
+    width: 20px;
+    height: 20px;
+}
+
+.content__stock--row > div {
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.content__stock input {
+    padding: 16px;
+    flex-grow: 1;
+    border: 1px solid rgb(221, 221, 221);
+    outline: 0;
+    border-radius: 10px;
+
+    font-size: 1.2em;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.content__stock button {
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    border: 0;
+    padding: 10px;
+    background-color: transparent;
+
+    font-weight: 300;
+    font-size: 1em;
+    font-family: 'Signika Negative', sans-serif;
+
+    border-top: 1px solid rgb(240, 240, 240);
+}
+
+.content__stock button img {
+    width: 25px;
+}
+
+.content__details {
+    grid-area: content__details;
+    justify-content: space-between;
+    gap: 10px;
+    height: 100%;
+}
+
+.content__details h5 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+
+    width: 250px;
+    font-size: 0.8em;
+    font-weight: 100;
+    color: rgb(150, 150, 150);
+}
+
+.content__details > *:not(h4):not(:last-of-type) {
+    flex-grow: 1;
+    padding-bottom: 10px;
+}
+
+.content__details h4 {
+    height: 35px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.content__details > *:not(*:last-of-type) {
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.details__photo {
+    height: 120px;
+    max-height: 120px;
+}
+
+.details__photo > div {
+    padding: 6px;
+}
+
+.details__photo--photo {
+    background-image: url('https://cdn.shopify.com/s/files/1/2303/2711/files/2_e822dae0-14df-4cb8-b145-ea4dc0966b34.jpg?v=1617059123');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 120px;
+    min-width: 120px;
+    margin: 6px;
+}
+
+.details__photo--photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.details__photo--name {
+    justify-content: space-between;
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+.details__photo--name > div {
+    height: 50%;
+    overflow: hidden;
+}
+
+.details__photo--name > div p {
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 1.6em;
+    line-height: 1.6em;
+}
+
+.details__photo--name > div p:first-of-type {
+    font-size: 0.8em;
+    font-weight: 100;
+    color: rgb(120, 120, 120);
+}
+
+.details__price {
+    height: 60px;
+}
+
+.details__price--card {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.details__price--card img {
+    height: 20px;
+}
+
+.details__price--card div p:first-of-type {
+    font-size: 0.8em;
+    font-weight: 100;
+    color: rgb(120, 120, 120);
+}
+
+.details__price--card div p:last-of-type{
+    font-size: 1.6em;
+}
+
+.details__timestamp {
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.details__timestamp img {
+    height: 20px;
+}
+
+.details__timestamp p {
+    font-size: 0.8em;
+    font-weight: 100;
+    color: rgb(120, 120, 120);
+}
+
+.details__timestamp p b {
+    font-size: 1em;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    margin: 0 4px;
+}
+
+.details__delete {
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.details__delete button {
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    border: 0;
+    padding: 10px;
+    background-color: transparent;
+
+    font-weight: 300;
+    font-size: 1em;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.details__delete button:hover {
+    cursor: pointer;
+}
+
+.details__delete img {
+    width: 16px;
+}
+
+/* MODAL */
+
+.modal__container {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 220px;
+
+    width: calc(100% - 220px);
+    height: 100%;
+    
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px) saturate(20%);
+}
+
+.modal__content {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+    border-radius: 10px;
+    width: 500px;
+    height: 420px;
+}
+
+.modal__content--header {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: rgb(64, 116, 139);
+    color: rgb(255, 255, 255);
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 1.2em;
+}
+
+.modal__content--main {
+    background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    padding: 16px;
+    gap: 10px;
+}
+
+.modal__content--footer {
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(240, 240, 240);
+    justify-content: space-between;
+}
+
+.modal__content--footer button {
+    font-size: 1em;
+    font-family: 'Signika Negative', sans-serif;
+    border: 0;
+    padding: 6px 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+}
+
+.modal__content--footer button:last-of-type {
+    border: 2px solid rgb(162, 196, 177);
+    background-color: rgb(255, 255, 255);
+}
+
+.modal__content--footer button:last-of-type:hover {
+    cursor: pointer;
+    border: 2px solid rgb(0, 163, 71);
+    background-color: rgb(0, 163, 71);
+    color: rgb(255, 255, 255);
+}
+
+.modal__content--footer button:first-of-type {
+    border: 2px solid rgb(204, 176, 176);
+    background-color: rgb(255, 255, 255);
+}
+
+.modal__content--footer button:first-of-type:hover {
+    cursor: pointer;
+    border: 2px solid rgb(170, 55, 55);
+    background-color: rgb(170, 55, 55);
+    color: rgb(255, 255, 255);
+}
