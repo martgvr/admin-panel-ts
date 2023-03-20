@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./panelproducts.css"
 
-import { getData, saveData } from "../../services/firebase.service"
+import { getData, saveData, deleteData } from "../../services/firebase.service"
 
 import Table from "../Table/Table"
 import Modal from "../Modal/Modal"
@@ -40,7 +40,7 @@ function PanelProducts() {
 
 	const deleteProduct = () => {
 		setShowModal(false)
-		console.log('Eliminar producto seleccionado');
+		deleteData('products', selectedProduct.uid).then(refreshData())
 	}
 
 	useEffect(() => productData.length === 0 && refreshData(), [])
