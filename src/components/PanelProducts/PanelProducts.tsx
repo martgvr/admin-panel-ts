@@ -59,9 +59,10 @@ function PanelProducts() {
 		}
 	}, [selectedProduct])
 
-	return isLoading === true ? (
+	return (
+		isLoading === true ? 
 		<Loading />
-	) : (
+		:
 		<div className="adminpanelproducts flex-column">
 			{showModal === true && (
 				<Modal modalClose={modalClose} saveData={saveData} refreshData={refreshData} modalType={modalType} selectedProduct={selectedProduct} deleteProduct={deleteProduct} />
