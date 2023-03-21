@@ -1,5 +1,5 @@
 import { auth, app } from "../services/firebase.config.js"
-import { getFirestore, collection, query, where, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore"
+import { getFirestore, collection, query, where, doc, addDoc, getDocs, deleteDoc, updateDoc } from "firebase/firestore"
 
 // FIRESTORE DATABASE
 // Corregir tipado
@@ -33,5 +33,10 @@ export const saveData = async (database: string, dataToSave: object) => {
 // deleteData(db, uid)
 export const deleteData = async (database: string, dataToDelete: string) => {
 	const docRef = await deleteDoc(doc(firestoreDB, database, dataToDelete))
+	return docRef 
+}
+
+export const updateData = async (database: string, uid: string, dataToUpdate: object) => {
+	const docRef = await updateDoc(doc(firestoreDB, database, uid), dataToUpdate)
 	return docRef 
 }

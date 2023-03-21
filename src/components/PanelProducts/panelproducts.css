@@ -104,8 +104,6 @@
     font-weight: 300;
     font-size: 1em;
     font-family: 'Signika Negative', sans-serif;
-
-    border-top: 1px solid rgb(240, 240, 240);
 }
 
 .content__stock button img {
@@ -264,6 +262,7 @@
     font-weight: 300;
     font-size: 1em;
     font-family: 'Signika Negative', sans-serif;
+    filter: invert(71%) sepia(51%) saturate(6983%) hue-rotate(347deg) brightness(106%) contrast(101%);
 }
 
 .details__delete button:hover {
@@ -272,4 +271,12 @@
 
 .details__delete img {
     width: 16px;
+}
+
+.details__modify {
+    filter: invert(71%) sepia(51%) saturate(6983%) hue-rotate(347deg) brightness(106%) contrast(101%);
+}
+
+.details__modify:hover {
+    cursor: pointer;
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./panelproducts.css"
 
-import { getData, saveData, deleteData } from "../../services/firebase.service"
+import { getData, saveData, deleteData, updateData } from "../../services/firebase.service"
 
 import Table from "../Table/Table"
 import Modal from "../Modal/Modal"
@@ -15,8 +15,7 @@ function PanelProducts() {
 	const [showModal, setShowModal] = useState(false)
 	const [modalType, setModalType] = useState("")
 
-	const activeDeleteButton = "invert(71%) sepia(51%) saturate(6983%) hue-rotate(347deg) brightness(106%) contrast(101%)"
-	const inactiveDeleteButton = "invert(96%) sepia(0%) saturate(2%) hue-rotate(126deg) brightness(86%) contrast(91%)"
+	const [newData, setNewData] = useState({ price: 0, stock: 0 })
 
 	const addProductModal = () => {
 		setShowModal(true)
@@ -40,8 +39,14 @@ function PanelProducts() {
 
 	const deleteProduct = () => {
 		setShowModal(false)
-		deleteData('products', selectedProduct.uid).then(refreshData())
+		deleteData("products", selectedProduct.uid).then(refreshData())
 	}
+
+	const productUpdateHandler = () => {
+		updateData("products", selectedProduct.uid, newData).then(refreshData())
+	}
+
+	const changeHandler = (event) => setNewData({ ...newData, [event.target.name]: event.target.value })
 
 	useEffect(() => productData.length === 0 && refreshData(), [])
 
@@ -50,6 +55,7 @@ function PanelProducts() {
 			let activeProducts = document.getElementsByClassName("admintable__selected")[0]
 			activeProducts !== undefined && activeProducts.classList.remove("admintable__selected")
 			document.getElementById(selectedProduct.uid).classList.add("admintable__selected")
+			setNewData({ price: selectedProduct.price, stock: selectedProduct.stock })
 		}
 	}, [selectedProduct])
 
@@ -57,7 +63,9 @@ function PanelProducts() {
 		<Loading />
 	) : (
 		<div className="adminpanelproducts flex-column">
-			{showModal === true && <Modal modalClose={modalClose} saveData={saveData} refreshData={refreshData} modalType={modalType}  selectedProduct={selectedProduct} deleteProduct={deleteProduct} />}
+			{showModal === true && (
+				<Modal modalClose={modalClose} saveData={saveData} refreshData={refreshData} modalType={modalType} selectedProduct={selectedProduct} deleteProduct={deleteProduct} />
+			)}
 
 			<div className="adminpanel__topbar flex-row">
 				<div className="adminpanel__topbar--left flex-row">
@@ -145,13 +153,9 @@ function PanelProducts() {
 						</div>
 
 						<div className="details__delete flex-row">
-							<button
-								className="flex-row"
-								style={{ filter: Object.keys(selectedProduct).length === 0 ? inactiveDeleteButton : activeDeleteButton }}
-                                onClick={deleteProductModal}
-							>
+							<button className="flex-row" onClick={deleteProductModal}>
 								<img src="https://cdn-icons-png.flaticon.com/512/542/542724.png" alt="" />
-                                Eliminar producto
+								Eliminar producto
 							</button>
 						</div>
 					</div>
@@ -170,7 +174,7 @@ function PanelProducts() {
 								<div className="content__stock--row flex-column">
 									<p>Precio unitario</p>
 									<div className="flex-row">
-										<input type="text" name="" id="" value={selectedProduct.price} />
+										<input type="text" name="price" id="price" value={newData.price} onChange={changeHandler}/>
 										<img src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png" alt="" />
 									</div>
 								</div>
@@ -178,13 +182,13 @@ function PanelProducts() {
 								<div className="content__stock--row flex-column">
 									<p>Stock</p>
 									<div className="flex-row">
-										<input type="text" name="" id="" value={selectedProduct.stock} />
+										<input type="text" name="stock" id="stock" value={newData.stock} onChange={changeHandler}/>
 										<img src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png" alt="" />
 									</div>
 								</div>
 							</div>
 
-							<button className="flex-row">
+							<button className="details__modify flex-row" onClick={productUpdateHandler}>
 								<img src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/accept-512.png" alt="" />
 								Modificar producto
 							</button>
