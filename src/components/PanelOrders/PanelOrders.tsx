@@ -3,15 +3,18 @@ import "./panelorders.css"
 
 import { getData, updateData } from "../../services/firebase.service"
 import Loading from "../Loading/Loading"
+import Table from "../Table/Table"
 
 function PanelOrders() {
   const [ordersData, setOrdersData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
 
+  const [selectedOrder, setSelectedOrder] = useState({})
+
   useEffect(() => {
     getData("orders").then(res => {
       setIsLoading(false)
-      console.log('response:', res)
+      setOrdersData(res)
     })
   }, [])
 
@@ -40,7 +43,9 @@ function PanelOrders() {
       </div>
 
       <div className="panelorders__content">
-        <div className="panelorders__content--list">content__list</div>
+        <div className="panelorders__content--list">
+          <Table data={ordersData} type={"orders"} setSelectedProduct={setSelectedOrder} />
+        </div>
         <div className="panelorders__content--details">
           <h4>Información de la orden</h4>
         </div>
