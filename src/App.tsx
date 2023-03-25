@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import './theme.css'
 
 import { BrowserRouter as Ruter, Link, useLocation } from "react-router-dom"
 
@@ -12,11 +13,19 @@ function useQuery() {
   return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
+const themeChangeHandler = () => {
+  console.log('hola');
+}
+
+const signOutHandler = () => {
+  console.log('Cerrar sesión');
+}
+
 function App() {
   let query = useQuery().get("tab");
 
   return (
-    <section className='adminpanel'>
+    <section className='adminpanel light-theme'>
       <article className='adminpanel__sidebar flex-column'>
         <div className='adminpanel__sidebar--top flex-column'>
           <p>logo</p>
@@ -45,9 +54,18 @@ function App() {
           </div>
         </div>
 
-        <div className='adminpanel__sidebar--bottom flex-row'>
-          <img src="https://cdn-icons-png.flaticon.com/512/2767/2767155.png" alt="" />
-          <p>Cerrar sesión</p>   
+        <div className='adminpanel__sidebar--bottom flex-column'>
+
+          <div className='sidebar__menu--item flex-row' onClick={themeChangeHandler}>
+            <img src="https://static-00.iconduck.com/assets.00/dark-theme-icon-512x512-185rlszm.png" alt=""/>
+            <p>Modo oscuro</p>   
+          </div>
+
+          <div className='sidebar__menu--item flex-row' onClick={signOutHandler}>
+            <img src="https://cdn-icons-png.flaticon.com/512/2767/2767155.png" alt="" />
+            <p>Cerrar sesión</p>   
+          </div>
+
         </div>
       </article>
       

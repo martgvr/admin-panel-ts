@@ -1,7 +1,9 @@
+/* STYLES */
+
 .adminpanel {
     width: 100%;
     height: 100vh;
-    background-color: rgb(240, 247, 255);
+    background-color: var(--main-bgColor);
 
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -16,13 +18,14 @@
 
 .adminpanel__sidebar {
     grid-area: sidebar;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(220, 220, 220);
 
-    align-items: center;
+    background-color: var(--sidebar-bgColor);
+    box-shadow: var(--sidebar-boxShadow);
+    border-right: var(--sidebar-border);
+
     justify-content: space-between;
+    align-items: center;
     z-index: 1;
-    box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
 }
 
 .adminpanel__sidebar > div:first-of-type {
@@ -30,24 +33,20 @@
 }
 
 .adminpanel__sidebar--bottom {
+    gap: 20px;
+}
+
+.adminpanel__sidebar--bottom > div {
     padding: 14px;
-    gap: 10px;
-    align-items: center;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
+    align-items: center;
+    gap: 10px;
 
-    font-size: 1.1em;
+    font-size: 1.0em;
     font-family: 'Signika Negative', sans-serif;
-}
 
-.adminpanel__sidebar--bottom:hover {
-    background-color: rgb(124, 122, 106);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
-.adminpanel__sidebar--bottom:hover > img {
-    filter: invert(1);
+    color: var(--sidebar-button-textColor);
+    background-color: var(--sidebar-button-bgColor);
 }
 
 .adminpanel__sidebar--bottom img {
@@ -84,22 +83,22 @@
 
 .sidebar__menu--item:hover {
     cursor: pointer;
-    background-color: rgb(124, 122, 106);
-    color: rgb(255, 255, 255);
     filter: contrast(1);
+    color: var(--sidebar-button-hover-textColor);
+    background-color: var(--sidebar-button-hover-bgColor);
 }
 
 .sidebar__menu--item:hover > img {
-    filter: invert(1);
+    filter: var(--sidebar-button-hover-filter);
 }
 
 .sidebar__menu--item.active {
-    background-color: rgb(88, 107, 122);
-    color: rgb(255, 255, 255);
+    background-color: var(--sidebar-button-active-bgColor);
+    color: var(--sidebar-button-active-textColor);
 }
 
 .sidebar__menu--item.active > img {
-    filter: invert(1);
+    filter: var(--sidebar-button-hover-filter);
 }
 
 .sidebar__menu--item img {
@@ -120,11 +119,12 @@
 }
 
 .adminpanel__topbar--left h1 {
+    color: var(--topbar-title-textColor);
     font-size: 2em;
 }
 
 .adminpanel__topbar--left p {
-    color: rgb(120, 120, 120);
+    color: var(--topbar-subTitle-textColor);
     font-size: 1.6em;
     font-family: 'Dosis', sans-serif;
 }
@@ -134,8 +134,8 @@
 }
 
 .adminpanel__topbar--right button {
-    background-color: rgb(65, 100, 136);
-    color: white;
+    background-color: var(--topbar-button-bgColor);
+    color: var(--topbar-button-textColor);
     border-radius: 6px;
     padding: 10px;
     border: 0;
@@ -146,11 +146,12 @@
 
 .adminpanel__topbar--right button:hover {
     cursor: pointer;
-    background-color: rgb(124, 122, 106);
+    color: var(--topbar-button-hover-textColor);
+    background-color: var(--topbar-button-hover-bgColor);
 }
 
 .adminpanel__topbar--right button:active {
-    background-color: rgb(85, 83, 62);
+    background-color: var(--topbar-button-active-bgColor);
 }
 
 .adminpanel__topbar--right input {
@@ -158,15 +159,17 @@
     width: 350px;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid rgb(190, 190, 190);
-    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 4px;
 
     font-family: 'Signika Negative', sans-serif;
     font-size: 1em;
+
+    border: var(--topbar-input-border);
+    box-shadow: var(--topbar-input-boxShadow);
+    background-color: var(--topbar-input-bgColor);
 }
 
 .adminpanel__topbar--right input::placeholder {
-    color: rgb(151, 151, 151);
+    color: var(--topbar-input-placeholder);
 }
 
 .adminpanel__topbar--right input:focus::placeholder {
@@ -174,7 +177,7 @@
 }
 
 .adminpanel__topbar--right input:focus {
-    border: 1px solid rgb(206, 198, 154);
+    border: var(--topbar-input-border-active);
 }
 
 /* FILTROS */
@@ -190,31 +193,35 @@
     width: 50%;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid rgb(190, 190, 190);
-    box-shadow: rgba(0, 0, 0, 0.03) 0px 1px 4px;
 
     font-family: 'Signika Negative', sans-serif;
     font-size: 1em;
+
+    border: var(--filterbar-select-border);
+    color: var(--filterbar-select-textColor);
+    box-shadow: var(--filterbar-select-boxShadow);
+    background-color: var(--filterbar-select-bgColor);
 }
 
 .adminpanel__filterbar button {
-    background-color: rgb(65, 100, 136);
-    color: white;
+    height: 30px;
+    width: 36px;
     border-radius: 6px;
     border: 0;
 
-    height: 30px;
-    width: 36px;
-
     font-family: 'Signika Negative', sans-serif;
     font-size: 1em;
+    
+    background-color: var(--filterbar-button-bgColor);
+    color: var(--filterbar-button-textColor);
 }
 
 .adminpanel__filterbar button:hover {
     cursor: pointer;
-    background-color: rgb(124, 122, 106);
+    background-color: var(--filterbar-button-hover-bgColor);
+    color: var(--filterbar-button-hover-textColor);
 }
 
 .adminpanel__filterbar button:active {
-    background-color: rgb(85, 83, 62);
+    background-color: var(--filterbar-button-active-bgColor);
 }

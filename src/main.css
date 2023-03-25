@@ -37,7 +37,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
 }
 
 body {

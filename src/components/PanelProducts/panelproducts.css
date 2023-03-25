@@ -19,24 +19,24 @@
 }
 
 .adminpanelproducts__content > div {
-    background-color: rgb(255, 255, 255);
     border-radius: 8px;
     padding: 10px;
 
-    border: 1px solid rgb(216, 216, 216);
-    box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+    border: var(--content-border);
+    color: var(--content-textColor);
+    box-shadow: var(--content-boxShadow);
+    background-color: var(--content-bgColor);
 }
 
 .adminpanelproducts__content h4 {
     font-size: 1.0em;
     font-weight: 300;
-    color: rgb(40, 40, 40);
+    color: var(--details-title-textColor);
 }
 
 .content__list {
     grid-area: content__list;
 }
-
 
 .content__price {
     grid-area: content__price;
@@ -67,7 +67,7 @@
 .content__stock--row p {
     font-size: 0.8em;
     font-weight: 100;
-    color: rgb(120, 120, 120);
+    color: var(--details-text-textColor);
 }
 
 .content__stock--row img {
@@ -82,11 +82,11 @@
 }
 
 .content__stock input {
-    padding: 16px;
-    flex-grow: 1;
-    border: 1px solid rgb(221, 221, 221);
     outline: 0;
+    flex-grow: 1;
+    padding: 16px;
     border-radius: 10px;
+    border: var(--details-input-border);
 
     font-size: 1.2em;
     font-family: 'Signika Negative', sans-serif;
@@ -128,7 +128,7 @@
     width: 250px;
     font-size: 0.8em;
     font-weight: 100;
-    color: rgb(150, 150, 150);
+    color: var(--details-nodata-textColor);
 }
 
 .content__details > *:not(h4):not(:last-of-type) {
@@ -193,7 +193,7 @@
 .details__photo--name > div p:first-of-type {
     font-size: 0.8em;
     font-weight: 100;
-    color: rgb(120, 120, 120);
+    color: var(--details-text-textColor);
 }
 
 .details__price {
@@ -214,7 +214,7 @@
 .details__price--card div p:first-of-type {
     font-size: 0.8em;
     font-weight: 100;
-    color: rgb(120, 120, 120);
+    color: var(--details-text-textColor);
 }
 
 .details__price--card div p:last-of-type{
@@ -234,7 +234,7 @@
 .details__timestamp p {
     font-size: 0.8em;
     font-weight: 100;
-    color: rgb(120, 120, 120);
+    color: var(--details-text-textColor);
 }
 
 .details__timestamp p b {

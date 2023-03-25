@@ -1,0 +1,121 @@
+/* THEMES */
+
+.dark-theme {
+    /* MAIN */
+    --main-bgColor: #121212;
+
+    /* SIDEBAR */
+    --sidebar-bgColor: #222;
+    --sidebar-border: 1px solid #333;
+    --sidebar-boxShadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+
+    --sidebar-button-bgColor: transparent;
+    --sidebar-button-textColor: #c7c7c7;
+    --sidebar-button-hover-bgColor: rgb(124, 122, 106);
+    --sidebar-button-hover-textColor: rgb(255, 255, 255);
+    --sidebar-button-hover-filter: invert(1);
+
+    --sidebar-button-active-bgColor: rgb(88, 107, 122);
+    --sidebar-button-active-textColor: rgb(255, 255, 255);
+
+    /* TOPBAR */
+    --topbar-title-textColor: rgb(255, 255, 255);
+    --topbar-subTitle-textColor: rgb(120, 120, 120);
+
+    --topbar-button-bgColor: rgb(65, 100, 136);
+    --topbar-button-textColor: rgb(255, 255, 255);
+    --topbar-button-hover-bgColor: rgb(124, 122, 106);
+    --topbar-button-hover-textColor: rgb(255, 255, 255);
+    --topbar-button-active-bgColor: rgb(85, 83, 62);
+
+    --topbar-input-border: 1px solid #333;
+    --topbar-input-border-active: 1px solid rgb(206, 198, 154);
+    --topbar-input-bgColor: #222222;
+    --topbar-input-boxShadow: rgba(0, 0, 0, 0.03) 0px 1px 4px;
+    --topbar-input-placeholder: rgb(151, 151, 151);
+
+    /* FILTERBAR */
+    --filterbar-select-border: 1px solid #333;
+    --filterbar-select-bgColor: #222222;
+    --filterbar-select-textColor: rgb(255, 255, 255);
+    --filterbar-select-boxShadow: rgba(0, 0, 0, 0.03) 0px 1px 4px;
+
+    --filterbar-button-bgColor: rgb(65, 100, 136);
+    --filterbar-button-textColor: rgb(255, 255, 255);
+    --filterbar-button-hover-bgColor: rgb(124, 122, 106);
+    --filterbar-button-hover-textColor: rgb(255, 255, 255);
+    
+    --filterbar-button-active-bgColor: rgb(85, 83, 62);
+
+    /* CONTENT CONTAINERS */
+    --content-bgColor: #222222;
+    --content-textColor: rgb(255, 255, 255);
+    --content-border: 1px solid #333;
+    --content-boxShadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+
+    /* DETAILS */
+    --details-title-textColor: rgb(192, 192, 192);
+    --details-text-textColor: rgb(120, 120, 120);
+    --details-input-border: 1px solid rgb(221, 221, 221);
+    --details-nodata-textColor: rgb(150, 150, 150);
+}
+
+.light-theme {
+    /* MAIN */
+    --main-bgColor: rgb(240, 247, 255);
+
+    /* SIDEBAR */
+    --sidebar-bgColor: #fff;
+    --sidebar-border: 1px solid rgb(220, 220, 220);
+    --sidebar-boxShadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+
+    --sidebar-button-bgColor: transparent;
+    --sidebar-button-textColor: #000;
+    --sidebar-button-hover-bgColor: rgb(124, 122, 106);
+    --sidebar-button-hover-textColor: rgb(255, 255, 255);
+    --sidebar-button-hover-filter: invert(1);
+
+    --sidebar-button-active-bgColor: rgb(88, 107, 122);
+    --sidebar-button-active-textColor: rgb(255, 255, 255);
+
+    /* TOPBAR */
+    --topbar-title-textColor: rgb(0, 0, 0);
+    --topbar-subTitle-textColor: rgb(120, 120, 120);
+
+    --topbar-button-bgColor: rgb(65, 100, 136);
+    --topbar-button-textColor: rgb(255, 255, 255);
+    --topbar-button-hover-bgColor: rgb(124, 122, 106);
+    --topbar-button-hover-textColor: rgb(255, 255, 255);
+    --topbar-button-active-bgColor: rgb(85, 83, 62);
+
+    --topbar-input-border: 1px solid rgb(190, 190, 190);
+    --topbar-input-border-active: 1px solid rgb(206, 198, 154);
+    --topbar-input-bgColor: rgb(255, 255, 255);
+    --topbar-input-boxShadow: rgba(0, 0, 0, 0.03) 0px 1px 4px;
+    --topbar-input-placeholder: rgb(151, 151, 151);
+
+    /* FILTERBAR */
+    --filterbar-select-border: 1px solid rgb(190, 190, 190);
+    --filterbar-select-bgColor: rgb(255, 255, 255);
+    --filterbar-select-textColor: rgb(0, 0, 0);
+    --filterbar-select-boxShadow: rgba(0, 0, 0, 0.03) 0px 1px 4px;
+
+    --filterbar-button-bgColor: rgb(65, 100, 136);
+    --filterbar-button-textColor: rgb(255, 255, 255);
+    --filterbar-button-hover-bgColor: rgb(124, 122, 106);
+    --filterbar-button-hover-textColor: rgb(255, 255, 255);
+    
+    --filterbar-button-active-bgColor: rgb(85, 83, 62);
+
+    /* CONTENT CONTAINERS */
+    --content-bgColor: rgb(255, 255, 255);
+    --content-textColor: rgb(0, 0, 0);
+    --content-border: 1px solid rgb(216, 216, 216);
+    --content-boxShadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+
+    /* DETAILS */
+    --details-title-textColor: rgb(40, 40, 40);
+    --details-text-textColor: rgb(120, 120, 120);
+    --details-input-border: 1px solid rgb(221, 221, 221);
+    --details-nodata-textColor: rgb(150, 150, 150);
+}
