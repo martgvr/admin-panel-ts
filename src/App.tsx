@@ -14,7 +14,13 @@ function useQuery() {
 }
 
 const themeChangeHandler = () => {
-  console.log('hola');
+  const adminpanel = document.getElementById('adminpanel')
+  
+  if (adminpanel?.classList.contains('dark-theme')) {
+    adminpanel?.classList.replace("dark-theme", "light-theme");
+  } else {
+    adminpanel?.classList.replace("light-theme", "dark-theme");
+  }
 }
 
 const signOutHandler = () => {
@@ -25,10 +31,10 @@ function App() {
   let query = useQuery().get("tab");
 
   return (
-    <section className='adminpanel light-theme'>
+    <section className='adminpanel dark-theme' id='adminpanel'>
       <article className='adminpanel__sidebar flex-column'>
         <div className='adminpanel__sidebar--top flex-column'>
-          <p>logo</p>
+          <p className='sidebar__logo'>logo</p>
 
           <div className='sidebar__menu flex-column'>
             <Link to="/cpanel?tab=products">

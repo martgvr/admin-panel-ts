@@ -73,6 +73,7 @@
 .content__stock--row img {
     width: 20px;
     height: 20px;
+    filter: var(--icon-invert);
 }
 
 .content__stock--row > div {
@@ -86,6 +87,9 @@
     flex-grow: 1;
     padding: 16px;
     border-radius: 10px;
+    
+    background-color: var(--details-input-bgColor);
+    color: var(--details-input-textColor);
     border: var(--details-input-border);
 
     font-size: 1.2em;
@@ -138,11 +142,11 @@
 
 .content__details h4 {
     height: 35px;
-    border-bottom: 1px solid rgb(240, 240, 240);
+    border-bottom: var(--details-separator-color);
 }
 
 .content__details > *:not(*:last-of-type) {
-    border-bottom: 1px solid rgb(240, 240, 240);
+    border-bottom: var(--details-separator-color);
 }
 
 .details__photo {
@@ -163,6 +167,8 @@
     width: 120px;
     min-width: 120px;
     margin: 6px;
+
+    border-radius: 10px;
 }
 
 .details__photo--photo img {
@@ -209,6 +215,7 @@
 
 .details__price--card img {
     height: 20px;
+    filter: var(--icon-invert);
 }
 
 .details__price--card div p:first-of-type {
@@ -229,6 +236,7 @@
 
 .details__timestamp img {
     height: 20px;
+    filter: var(--icon-invert);
 }
 
 .details__timestamp p {
@@ -240,7 +248,7 @@
 .details__timestamp p b {
     font-size: 1em;
     font-weight: 300;
-    color: rgb(0, 0, 0);
+    color: var(--content-textColor);
     margin: 0 4px;
 }
 
