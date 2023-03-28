@@ -79,7 +79,7 @@ function App() {
         { query === 'products' && <PanelProducts /> }
         { query === 'orders' && <PanelOrders /> }
         { query === 'customers' && <PanelCustomers /> }
-        { query === null && <div><h2>Bienvenido!</h2>Seleccione una de las opciones del menú.</div> }
+        { query === null && <div className='welcome'><h2>Bienvenido!</h2>Seleccione una de las opciones del menú.</div> }
       </article>
     </section>
   )

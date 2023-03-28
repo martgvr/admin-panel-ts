@@ -1,4 +1,7 @@
 /* STYLES */
+.welcome {
+    color: var(--content-textColor);
+}
 
 .adminpanel {
     width: 100%;
