@@ -35,17 +35,17 @@ function PanelCustomers() {
 
       <div className="panelcustomers__content">
         <div className="panelcustomers__content--list">
-          <Table data={customersData} type={"customers"} setSelectedProduct={setSelectedCustomer} />
+          <Table data={customersData} type={"customers"} setSelectedCustomer={setSelectedCustomer} />
         </div>
         <div className="panelcustomers__content--details">
 
         {
           Object.keys(selectedCustomer).length === 0 ?
-          <div className="nodata__table flex-row" style={{ fontSize: 14 }}>
-            <p style={{ width: '200px', textAlign: 'center' }}>Seleccione un cliente para ver los detalles</p>
-          </div>
-          :
-          <h4>Información del cliente</h4>
+            <div className="nodata__table flex-row" style={{ fontSize: 14 }}>
+              <p style={{ width: '200px', textAlign: 'center' }}>Seleccione un cliente para ver los detalles</p>
+            </div>
+            :
+            <h4>Información del cliente</h4>
         }
 
         </div>

@@ -65,14 +65,14 @@
 }
 
 .admintable tbody tr td {
-    padding: 16px 0px;
+    padding: 14px 0px;
+    height: 65px;
 }
 
 .admintable tbody tr td:first-of-type {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 0;
 }
 
 .admintable tbody tr td:first-of-type {
@@ -87,7 +87,8 @@
 
 .admintable tbody img {
     border-radius: 100%;
-    width: 50px;
+    aspect-ratio: 1;
+    width: 45px;
 }
 
 /* NODATA */

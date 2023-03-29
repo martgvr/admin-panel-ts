@@ -1,7 +1,7 @@
 import React from "react"
 import "./table.css"
 
-function Table({ data, type, setSelectedProduct, setSelectedOrder }) {
+function Table({ data, type, setSelectedProduct, setSelectedOrder, setSelectedCustomer }) {
 	console.log("data param:", data)
 
 	return (
@@ -21,13 +21,24 @@ function Table({ data, type, setSelectedProduct, setSelectedOrder }) {
 						<th>Precio</th>
 					</tr>
 				)}
+
 				{ 
 				type === "orders" && (
 					<tr>
-						<th style={{ width: "100px" }}>ID</th>
-						<th>Nombre del comprador</th>
+						<th>Email del comprador</th>
 						<th>Estado</th>
 						<th>Total</th>
+						<th>Cantidad de items</th>
+					</tr>
+				)}
+
+				{ 
+				type === "customers" && (
+					<tr>
+						<th style={{ width: "100px" }}>Foto</th>
+						<th>Nombre completo</th>
+						<th>Email</th>
+						<th style={{ width: "150px" }}>Items Carrito</th>
 					</tr>
 				)}
 			</thead>
@@ -48,18 +59,29 @@ function Table({ data, type, setSelectedProduct, setSelectedOrder }) {
 						</tr>
 					))
                 }
+
 				{ 
 				type === "orders" && (
-					data.map((product) => (
-						<tr key={product.uid} onClick={() => setSelectedOrder(product)} id={product.uid}>
+					data.map((order) => (
+						<tr key={order.uid} onClick={() => setSelectedOrder(order)} id={order.uid}>
+							<td>{order.customer}</td>
+							<td>{order.status}</td>
+							<td>0</td>
+							<td>{order.products.length}</td>
+						</tr>)
+					))
+				}
+
+				{ 
+				type === "customers" && (
+					data.map((customer) => (
+						<tr key={customer.uid} onClick={() => setSelectedCustomer(customer)} id={customer.uid}>
 							<td>
-								<img src={product.photo} alt="" />
+								<img src={customer.avatar} alt="" />
 							</td>
-							<td>{product.name}</td>
-							<td>{product.type}</td>
-							<td>{product.category}</td>
-							<td>{product.stock}</td>
-							<td>$ {product.price}</td>
+							<td>{customer.fullname}</td>
+							<td>{customer.email}</td>
+							<td>{customer.cart.length}</td>
 						</tr>)
 					))
 				}

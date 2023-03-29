@@ -44,7 +44,7 @@ function PanelOrders() {
 
       <div className="panelorders__content">
         <div className="panelorders__content--list">
-          <Table data={ordersData} type={"orders"} setSelectedProduct={setSelectedOrder} />
+          <Table data={ordersData} type={"orders"} setSelectedOrder={setSelectedOrder} />
         </div>
         <div className="panelorders__content--details flex-column">
 
