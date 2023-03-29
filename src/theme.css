@@ -14,10 +14,10 @@
     --sidebar-boxShadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
     --sidebar-button-bgColor: transparent;
     --sidebar-button-textColor: #c7c7c7;
-    --sidebar-button-hover-bgColor: rgb(124, 122, 106);
+    --sidebar-button-hover-bgColor: rgb(128, 127, 122);
     --sidebar-button-hover-textColor: rgb(255, 255, 255);
     --sidebar-button-hover-filter: invert(1);
-    --sidebar-button-active-bgColor: rgb(88, 107, 122);
+    --sidebar-button-active-bgColor: rgb(80, 80, 80);
     --sidebar-button-active-textColor: rgb(255, 255, 255);
 
     /* TOPBAR */

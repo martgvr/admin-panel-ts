@@ -5,9 +5,13 @@ function Table({ data, type, setSelectedProduct, setSelectedOrder }) {
 	console.log("data param:", data)
 
 	return (
+		data.length === 0 ?
+		<div className="nodata__table flex-row">No hay información en la base de datos</div>
+		:
 		<table className="admintable">
 			<thead>
-				{ type === "products" && (
+				{ 
+				type === "products" && (
 					<tr>
 						<th style={{ width: "100px" }}>Foto</th>
 						<th>Nombre del producto</th>
@@ -17,7 +21,8 @@ function Table({ data, type, setSelectedProduct, setSelectedOrder }) {
 						<th>Precio</th>
 					</tr>
 				)}
-				{ type === "orders" && (
+				{ 
+				type === "orders" && (
 					<tr>
 						<th style={{ width: "100px" }}>ID</th>
 						<th>Nombre del comprador</th>
@@ -28,7 +33,8 @@ function Table({ data, type, setSelectedProduct, setSelectedOrder }) {
 			</thead>
 
 			<tbody>
-				{type === "products" &&
+				{
+				type === "products" &&
 					data.map((product) => (
 						<tr key={product.uid} onClick={() => setSelectedProduct(product)} id={product.uid}>
 							<td>
@@ -42,14 +48,8 @@ function Table({ data, type, setSelectedProduct, setSelectedOrder }) {
 						</tr>
 					))
                 }
-				{type === "orders" && (
-                    data.length === 0 ?
-                        <tr>
-                            <th colSpan={4} style={{ height: '60px', backgroundColor: '#f8f8f8', fontWeight: '100' }}>
-                                No hay ordenes en la base de datos
-                            </th>
-                        </tr>
-                        :
+				{ 
+				type === "orders" && (
 					data.map((product) => (
 						<tr key={product.uid} onClick={() => setSelectedOrder(product)} id={product.uid}>
 							<td>

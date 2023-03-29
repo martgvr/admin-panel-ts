@@ -46,8 +46,17 @@ function PanelOrders() {
         <div className="panelorders__content--list">
           <Table data={ordersData} type={"orders"} setSelectedProduct={setSelectedOrder} />
         </div>
-        <div className="panelorders__content--details">
-          <h4>Información de la orden</h4>
+        <div className="panelorders__content--details flex-column">
+
+          {
+            Object.keys(selectedOrder).length === 0 ?
+            <div className="nodata__table flex-row" style={{ fontSize: 14 }}>
+              <p style={{ width: '200px', textAlign: 'center' }}>Seleccione una orden para ver los detalles</p>
+            </div>
+            :
+            <h4>Información de la orden</h4>
+          }
+
         </div>
       </div>
     </div>

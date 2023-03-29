@@ -3,15 +3,18 @@ import "./panelcustomers.css"
 
 import { getData, updateData } from "../../services/firebase.service"
 import Loading from "../Loading/Loading"
+import Table from "../Table/Table"
 
 function PanelCustomers() {
   const [customersData, setCustomersData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
 
+  const [selectedCustomer, setSelectedCustomer] = useState({})
+
   useEffect(() => {
     getData("customers").then(res => {
       setIsLoading(false)
-      console.log('response:', res)
+      setCustomersData(res)
     })
   }, [])
 
@@ -31,9 +34,20 @@ function PanelCustomers() {
       </div>
 
       <div className="panelcustomers__content">
-        <div className="panelcustomers__content--list">content__list</div>
+        <div className="panelcustomers__content--list">
+          <Table data={customersData} type={"customers"} setSelectedProduct={setSelectedCustomer} />
+        </div>
         <div className="panelcustomers__content--details">
+
+        {
+          Object.keys(selectedCustomer).length === 0 ?
+          <div className="nodata__table flex-row" style={{ fontSize: 14 }}>
+            <p style={{ width: '200px', textAlign: 'center' }}>Seleccione un cliente para ver los detalles</p>
+          </div>
+          :
           <h4>Información del cliente</h4>
+        }
+
         </div>
       </div>
     </div>
