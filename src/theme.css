@@ -67,6 +67,32 @@
     --table-row-selected-bgcolor: rgb(65, 65, 65);
     --table-row-selected-textcolor: rgb(255, 255, 255);
     --table-row-even-bgcolor: rgb(41, 41, 41);
+
+    /* MODAL */
+    --modal-bgColor: rgba(20, 20, 20, 0.9);
+    --modal-header-product-bg: rgb(65, 89, 95);
+    --modal-header-product-text: rgb(255, 255, 255);
+    --modal-content-bg: rgb(30, 30, 30);
+    --modal-content-text: rgb(210, 210, 210);
+    --modal-content-title: rgb(230, 230, 230);
+    --modal-footer-bg: rgb(40, 40, 40);
+    --modal-input-bg: rgb(25, 25, 25);
+    --modal-input-text: rgb(200, 200, 200);
+    --modal-input-border: 1px solid rgb(55, 55, 55);
+    --modal-input-border-focus: 1px solid rgb(117, 108, 93);
+    --modal-input-placeholder: rgb(133, 133, 133);
+    --modal-button-inactive-green-bg: rgb(43, 49, 44);
+    --modal-button-inactive-green-text: rgb(255, 255, 255);
+    --modal-button-inactive-green-border: 2px solid rgb(67, 82, 70);
+    --modal-button-active-green-bg: rgb(34, 110, 67);
+    --modal-button-active-green-text: rgb(255, 255, 255);
+    --modal-button-active-green-border: 2px solid rgb(34, 110, 67);
+    --modal-button-inactive-red-bg: rgb(58, 48, 48);
+    --modal-button-inactive-red-text: rgb(255, 255, 255);
+    --modal-button-inactive-red-border: 2px solid rgb(82, 67, 67);
+    --modal-button-active-red-bg: rgb(170, 55, 55);
+    --modal-button-active-red-text: rgb(255, 255, 255);
+    --modal-button-active-red-border: 2px solid rgb(170, 55, 55);
 }
 
 .light-theme {
@@ -133,6 +159,32 @@
     --table-row-selected-bgcolor: rgb(220, 236, 241);
     --table-row-selected-textcolor: rgb(0, 0, 0);
     --table-row-even-bgcolor: rgb(250, 250, 250);
+
+    /* MODAL */
+    --modal-bgColor: rgba(255, 255, 255, 0.8);
+    --modal-header-product-bg: rgb(64, 116, 139);
+    --modal-header-product-text: rgb(255, 255, 255);
+    --modal-content-bg: rgb(255, 255, 255);
+    --modal-content-text: rgb(54, 54, 54);
+    --modal-content-title: rgb(0, 0, 0);
+    --modal-footer-bg: rgb(240, 240, 240);
+    --modal-input-bg: transparent;
+    --modal-input-text: rgb(10, 10, 10);
+    --modal-input-border: 1px solid rgb(182, 182, 182);
+    --modal-input-border-focus: 1px solid rgb(173, 127, 40);
+    --modal-input-placeholder: rgb(192, 192, 192);
+    --modal-button-inactive-green-bg: rgb(255, 255, 255);
+    --modal-button-inactive-green-text: rgb(0, 0, 0);
+    --modal-button-inactive-green-border: 2px solid rgb(162, 196, 177);
+    --modal-button-active-green-bg: rgb(0, 163, 71);
+    --modal-button-active-green-text: rgb(255, 255, 255);
+    --modal-button-active-green-border: 2px solid rgb(0, 163, 71);
+    --modal-button-inactive-red-bg: rgb(255, 255, 255);
+    --modal-button-inactive-red-text: rgb(0, 0, 0);
+    --modal-button-inactive-red-border: 2px solid rgb(204, 176, 176);
+    --modal-button-active-red-bg: rgb(170, 55, 55);
+    --modal-button-active-red-text: rgb(255, 255, 255);
+    --modal-button-active-red-border: 2px solid rgb(170, 55, 55);
 }
 
 /* TRANSITIONS */

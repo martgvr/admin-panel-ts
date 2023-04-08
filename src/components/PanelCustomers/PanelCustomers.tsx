@@ -20,7 +20,7 @@ function PanelCustomers() {
 
 	return isLoading === true ? (
 		<Loading />
-	) : (
+		) : (
 		<div className="panelcustomers flex-column">
 			<div className="adminpanel__topbar flex-row">
 				<div className="adminpanel__topbar--left flex-row">
@@ -37,11 +37,11 @@ function PanelCustomers() {
 					<Table data={customersData} type={"customers"} setSelectedCustomer={setSelectedCustomer} />
 				</div>
 				<div className="panelcustomers__content--details">
-					{Object.keys(selectedCustomer).length === 0 ? (
+					{ Object.keys(selectedCustomer).length === 0 ? (
 						<div className="nodata__table flex-row" style={{ fontSize: 14 }}>
 							<p style={{ width: "200px", textAlign: "center" }}>Seleccione un cliente para ver los detalles</p>
 						</div>
-					) : ( 
+						) : (
 						<div className="content__details flex-column">
 							<h4>Información del cliente</h4>
 
@@ -59,16 +59,15 @@ function PanelCustomers() {
 								</div>
 							</div>
 
-              <div className="content__stock flex-column">
-                <div className="content__stock--row flex-column">
-                    <p>Precio unitario</p>
-                    <div className="flex-row">
-                      <input type="text" name="price" id="price" />
-                      <img src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png" alt="" />
-                    </div>
-                </div>
-              </div>
-
+							<div className="content__stock flex-column">
+								<div className="content__stock--row flex-column">
+									<p>Precio unitario</p>
+									<div className="flex-row">
+										<input type="text" name="price" id="price" />
+										<img src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png" alt="" />
+									</div>
+								</div>
+							</div>
 						</div>
 					)}
 				</div>

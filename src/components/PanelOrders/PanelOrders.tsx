@@ -18,6 +18,15 @@ function PanelOrders() {
     })
   }, [])
 
+  useEffect(() => {
+		if (Object.keys(selectedOrder).length !== 0 && !isLoading) {
+			let activeProducts = document.getElementsByClassName("admintable__selected")[0]
+			activeProducts !== undefined && activeProducts.classList.remove("admintable__selected")
+			document.getElementById(selectedOrder.uid).classList.add("admintable__selected")
+			// setNewData({ price: selectedOrder.price, stock: selectedOrder.stock })
+		}
+	}, [selectedOrder])
+
   return (
     isLoading === true ?
     <Loading />
@@ -54,7 +63,42 @@ function PanelOrders() {
               <p style={{ width: '200px', textAlign: 'center' }}>Seleccione una orden para ver los detalles</p>
             </div>
             :
-            <h4>Información de la orden</h4>
+            <div className="order__details flex-column">
+
+              <div className="order__details--top flex-column">
+                <h4>Información de la orden</h4>
+
+                <div className="flex-column">
+                  <p className="order__details--heading">Email del cliente</p>
+                  <p className="order__details--text">{selectedOrder.customer}</p>
+                  <p className="order__details--heading">ID de orden</p>
+                  <p className="order__details--text">{selectedOrder.uid}</p>
+                </div>
+
+                <div className="flex-row">
+                  <img src="https://cdn-icons-png.flaticon.com/512/3917/3917267.png" alt="" className="order__details--icon"/>
+                  <p className="order__details--heading">Generada el: <b>13/3/2023, 01:16:24</b></p>
+                </div>
+
+                <div className="flex-column">
+                  <p className="order__details--heading">Items en orden</p>
+                </div>
+
+                <div className="flex-row">
+                  <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/truck-512.png" alt="" className="order__details--icon"/>
+                  <p className="order__details--heading">Estado de orden: <b>Sin enviar</b></p>
+                </div>
+              </div>
+
+              <div className="order__details--bottom flex-row">
+                <div className="details__delete flex-row">
+                  <button className="flex-row">
+                    <img src="https://cdn.onlinewebfonts.com/svg/img_411213.png" alt="" />
+                    Cambiar estado de orden
+                  </button>
+                </div>
+              </div>
+            </div>
           }
 
         </div>
