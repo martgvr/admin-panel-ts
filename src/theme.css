@@ -60,6 +60,8 @@
     --details-nodata-textColor: rgb(150, 150, 150);
     --details-separator-color: 1px solid rgb(50, 50, 50);
 
+    --details-table-bgColor: rgb(25, 25, 25);
+
     /* TABLE */
     --table-thead-bgcolor: rgb(48, 48, 48);
     --table-thead-textcolor: rgb(184, 184, 184);

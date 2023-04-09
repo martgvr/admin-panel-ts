@@ -58,10 +58,10 @@ function Table({ data, type, setSelectedProduct, setSelectedOrder, setSelectedCu
 							data.map(order => (
 								<tr key={order.uid} onClick={() => setSelectedOrder(order)} id={order.uid}>
 									<td>
-										<img src={order.status === 'delivered' ? 'check.png' : 'cancel.png'} alt="" style={{ width: '30px' }}/>
+										<img src={order.status === 'delivered' ? 'check.png' : 'cancel.png'} alt="" style={{ width: '30px' }} className="orders__iconControl"/>
 									</td>
 									<td>{order.customer}</td>
-									<td>{order.status}</td>
+									<td>{order.status === 'undelivered' ? 'Sin enviar' : 'Enviado' }</td>
 									<td>0</td>
 									<td>{order.products.length}</td>
 								</tr>

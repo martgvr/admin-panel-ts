@@ -28,7 +28,7 @@
 }
 
 .panelcustomers__content--details {
-    width: 350px;
+    width: 400px;
     background-color: rgb(255, 255, 255);
 }
 
@@ -38,5 +38,15 @@
     font-size: 1.0em;
 
     color: var(--details-title-textColor);
+    border-bottom: var(--details-separator-color);
+}
+
+/* DETAILS */
+
+.panelcustomers__details {
+    height: 100%;
+}
+
+.panelcustomers__details--block {
     border-bottom: var(--details-separator-color);
 }

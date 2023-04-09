@@ -35,7 +35,7 @@ function PanelOrders() {
       <div className="adminpanel__topbar flex-row">
         <div className="adminpanel__topbar--left flex-row">
           <h1>Ordenes</h1>
-          <p>(120)</p>
+          <p>({ordersData.length})</p>
         </div>
         <div className="adminpanel__topbar--right flex-row">
           <input type="text" name="" id="" placeholder="Buscar orden" />
@@ -82,6 +82,32 @@ function PanelOrders() {
 
                 <div className="flex-column">
                   <p className="order__details--heading">Items en orden</p>
+
+                  <div className="order__details--table">
+
+                    <table className="details__table">
+                      <thead>
+                        <tr>
+                          <th>Cantidad</th>
+                          <th>Nombre del producto</th>
+                          <th>Precio</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        {
+                          selectedOrder.products.map(product => (
+                            <tr key={product.uid}>
+                              <td>{product.quantity}</td>
+                              <td>{product.name}</td>
+                              <td>{product.total}</td>
+                            </tr>
+                          ))
+                        }
+                      </tbody>
+                    </table>
+
+                  </div>
                 </div>
 
                 <div className="flex-row">

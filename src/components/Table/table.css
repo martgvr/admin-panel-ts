@@ -100,3 +100,9 @@
     align-items: center;
     color: var(--details-nodata-textColor);
 }
+
+/* ORDERS ICON */
+
+.orders__iconControl {
+    filter: var(--icon-invert);
+}

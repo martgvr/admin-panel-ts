@@ -18,6 +18,15 @@ function PanelCustomers() {
 		})
 	}, [])
 
+	useEffect(() => {
+		if (Object.keys(selectedCustomer).length !== 0 && !isLoading) {
+			let activeProducts = document.getElementsByClassName("admintable__selected")[0]
+			activeProducts !== undefined && activeProducts.classList.remove("admintable__selected")
+			document.getElementById(selectedCustomer.uid).classList.add("admintable__selected")
+			// setNewData({ price: selectedOrder.price, stock: selectedOrder.stock })
+		}
+	}, [selectedCustomer])
+
 	return isLoading === true ? (
 		<Loading />
 		) : (
@@ -25,7 +34,7 @@ function PanelCustomers() {
 			<div className="adminpanel__topbar flex-row">
 				<div className="adminpanel__topbar--left flex-row">
 					<h1>Clientes</h1>
-					<p>(850)</p>
+					<p>({customersData.length})</p>
 				</div>
 				<div className="adminpanel__topbar--right flex-row">
 					<input type="text" name="" id="" placeholder="Buscar cliente" />
@@ -42,6 +51,7 @@ function PanelCustomers() {
 							<p style={{ width: "200px", textAlign: "center" }}>Seleccione un cliente para ver los detalles</p>
 						</div>
 						) : (
+							
 						<div className="content__details flex-column">
 							<h4>Información del cliente</h4>
 
@@ -59,14 +69,28 @@ function PanelCustomers() {
 								</div>
 							</div>
 
-							<div className="content__stock flex-column">
-								<div className="content__stock--row flex-column">
-									<p>Precio unitario</p>
-									<div className="flex-row">
-										<input type="text" name="price" id="price" />
-										<img src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-new-icon-22.png" alt="" />
-									</div>
+							<div className="panelcustomers__details flex-column">
+								<div className="panelcustomers__details--block flex-column">
+									<p className="order__details--heading">ID del cliente</p>
+									<p className="order__details--text">{selectedCustomer.uid}</p>
+									<p className="order__details--heading">Elementos en carrito</p>
+									<p className="order__details--text">{selectedCustomer.cart.length}</p>
 								</div>
+								<div className="panelcustomers__details--block flex-column">
+									<p className="order__details--heading" style={{ marginTop: '10px' }}>Dirección</p>
+									<p className="order__details--text">{selectedCustomer.address}</p>
+									<p className="order__details--heading">Código de área</p>
+									<p className="order__details--text">{selectedCustomer.areacode}</p>
+									<p className="order__details--heading">Teléfono</p>
+									<p className="order__details--text">{selectedCustomer.telephone}</p>
+								</div>
+							</div>
+
+							<div className="details__delete flex-row">
+								<button className="flex-row">
+									<img src="https://icons.veryicon.com/png/o/miscellaneous/jt2/reset-filter-1.png" alt="" />
+									Resetear contraseña
+								</button>
 							</div>
 						</div>
 					)}
